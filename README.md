@@ -43,3 +43,32 @@ npm run dev
 | `npm run preview` | 预览生产构建 |
 | `npm run lint` | ESLint / Oxlint |
 | `npm run format` | Prettier |
+| `.\pack.ps1` / `./pack.sh` | 生产构建并发布到 Showcase `public/web` |
+
+## 打包发布
+
+在 website 根目录执行：
+
+```powershell
+# Windows
+.\pack.ps1
+```
+
+```sh
+# Linux / macOS
+./pack.sh
+```
+
+脚本会先执行 `npm run build`（默认 `--base /showcase/web/`，与 Showcase 现有静态入口一致），然后**清空** `lowcode/server/apps/Showcase/public/web` 目录内的全部内容，再将 `dist/` 复制进去。
+
+只清理该 `web` 目录中的文件和子目录，不会删除 `web` 目录本身，也不会删除其上级目录（`public`、`Showcase`、`apps` 等）。
+
+可用 `-Base` / `--base` 覆盖资源前缀，例如：
+
+```powershell
+.\pack.ps1 -Base /showcase/web/
+```
+
+```sh
+./pack.sh --base /showcase/web/
+```
