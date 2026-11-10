@@ -1,0 +1,14 @@
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family:
+    Inter, 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+  color: #303133;
+  background: #f5f7fa;
+  -webkit-font-smoothing: antialiased;
+}
